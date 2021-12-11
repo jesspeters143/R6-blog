@@ -10,5 +10,23 @@
   <%= @post.body %>
 </p>
 
+<br>
+<h2> <%= @post.comments.count %> Comments</h2>
+  <%= render @post.comments %>
+  <h3>Add a comment: </h3>
+  <%= render 'comments/form' %>
+</br>
+
+
+# <div id="comments">
+#   <h1>Comments</h1>
+#   <% @post.comments.each do |comment| %>
+#     <div>
+#       <strong><%= comment.name %> says:</strong>
+#       <%= comment.content %>
+#     </div>
+#   <% end %>
+# </div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
